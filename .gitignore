@@ -1,0 +1,6 @@
+.terraform.lock.hcl
+.terragrunt-cache
+setup/s3/s3-policy.json
+scripts/env.ps1
+setup/atlantis/deployment/values.yaml
+setup/atlantis/deployment/provisioning-secrets.yaml
