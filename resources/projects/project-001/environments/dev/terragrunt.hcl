@@ -3,5 +3,5 @@ include "project" {
 }
 
 inputs = {
-  environment_description = "DEV environment"
+  environment_description = "DEV environment - mod"
 }  
