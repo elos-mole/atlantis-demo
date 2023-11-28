@@ -3,7 +3,7 @@ resource "azuredevops_project" "project" {
   description = var.project_description
 }
 
-resource "azuredevops_git_repository" "example" {
+resource "azuredevops_git_repository" "configuration" {
   project_id = azuredevops_project.project.id
   name       = "gitops-configuration"
   initialization {
