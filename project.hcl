@@ -1,5 +1,5 @@
 locals{
-  parent_name     = basename(path_relative_to_include())
+  project_name     = basename(path_relative_to_include())
 }
 
 generate "backend" {
@@ -18,9 +18,9 @@ EOF
 
 terraform {
   # Workaround for https://github.com/gruntwork-io/terragrunt/issues/1675
-  source = "${path_relative_from_include()}//modules/parent"
+  source = "${path_relative_from_include()}//modules/project"
 }
 
 inputs = {
-  parent_name = local.parent_name
+  project_name = local.project_name
 }

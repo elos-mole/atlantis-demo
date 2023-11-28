@@ -1,5 +1,5 @@
 locals{
-  child_name     = basename(path_relative_to_include())
+  environment_name     = basename(path_relative_to_include())
 }
 
 generate "backend" {
@@ -16,17 +16,16 @@ terraform {
 EOF
 }
 
-dependency "parent" {
+dependency "project" {
   config_path = "../../"
 }
 
 terraform {
   # Workaround for https://github.com/gruntwork-io/terragrunt/issues/1675
-  source = "${path_relative_from_include()}//modules/child"
+  source = "${path_relative_from_include()}//modules/environment"
 }
 
 inputs = {
-  child_name        = local.child_name
-  parent_name      = dependency.parent.outputs.parent_name
-  parent_message   = dependency.parent.outputs.parent_message
+  environment_name        = local.environment_name
+  project_id              = dependency.project.outputs.project_id
 }
