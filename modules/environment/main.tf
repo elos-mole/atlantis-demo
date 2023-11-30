@@ -50,6 +50,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: ${data.azuredevops_project.project.name}-${var.environment_name}
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 EOF
