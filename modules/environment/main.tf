@@ -49,6 +49,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: ${data.azuredevops_project.project.name}-${var.environment_name}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
 EOF
   branch              = "refs/heads/main"
   commit_message      = "IaC Provisioning"
