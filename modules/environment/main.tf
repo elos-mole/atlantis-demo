@@ -19,7 +19,7 @@ data "azuredevops_git_repository" "argoapps" {
 resource "azuredevops_environment" "environment" {
   project_id  = var.project_id
   name        = var.environment_name
-  description = var.environment_description
+  description = "DEMO - ${var.environment_description}"
 }
 
 resource "azuredevops_git_repository_file" "gitkeep" {
